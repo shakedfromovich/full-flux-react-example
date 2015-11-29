@@ -21,20 +21,20 @@ var AppStore = assign({}, EventEmitter.prototype, {
   }
 });
 
-AppDispatcher.register(function(payload){
-  switch (payload.action.actionType) {
-    case ActionTypes.ADD_ITEM :
-      _books.push({name:_books.length});
-      AppStore.emitChange();
-      break;
-      case ActionTypes.REMOVE_ITEM :
-          _books.pop();
-          AppStore.emitChange();
-          break;
-    default:
-          //Do nothing
-  }
-  return true;
+AppDispatcher.register(function (payload) {
+    switch (payload.action.actionType) {
+        case ActionTypes.ADD_ITEM :
+            _books.push({name: _books.length});
+            AppStore.emitChange();
+            break;
+        case ActionTypes.REMOVE_ITEM :
+            _books.pop();
+            AppStore.emitChange();
+            break;
+        default:
+        //Do nothing
+    }
+    return true;
 });
 
 module.exports = AppStore;
